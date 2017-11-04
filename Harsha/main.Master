@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="main.master.cs" Inherits="Harsha.main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css"/>
+    <link rel="stylesheet" href="styles.css"/>
+     <style type="text/css">
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+    <div class="mdl-layout__header-row">
+        <span class="android-title mdl-layout-title">
+            <img class="android-logo-image" src="images/android-logo.png">
+          </span>
+           <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="products.aspx">Products</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="companyprofile.aspx">Company profile</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="enquiry.aspx">Enquiry</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="contactus.aspx">Contact us</a>
+              
+             <!--<a  href="checkout.aspx" class="material-icons mdl-badge mdl-badge--overlap" data-badge="1">shopping_cart</a> -->
+              <a href="checkout.aspx" class="material-icons mdl-badge mdl-badge--overlap" data-badge="<%= totalCount %>">shopping_cart</a>
+              <p> hi</p><asp:Button runat="server" ID="login" Text="Login" 
+                  class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" 
+                  onclick="login_Click"/>
+               
+            </nav>
+           
+          </div>
+          <span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="images/android-logo.png">
+          </span>
+    </div>
+    </div>
+    <div>
+        <asp:ContentPlaceHolder ID="c1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    <!--Footer starts here -->
+    <footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">Herbal stuff</div>
+    <ul class="mdl-mini-footer__link-list">
+      <li><a href="contactus.aspx">Help</a></li>
+      <li><a  href="sitemap.aspx">Sitemap</a></li>
+    </ul>
+  </div>
+</footer>
+    </form>
+</body>
+</html>
